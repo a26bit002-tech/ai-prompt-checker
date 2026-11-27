@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7ff">
+    <title>AI Prompt Quality Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <a class="brand" href="#" aria-label="PromptCheck home">
+            <span class="brand-icon">✦</span>
+            <span>Prompt<span class="brand-accent">Check</span></span>
+        </a>
+        <span class="header-label">AI LEARNING TOOL</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-badge">✦ YOUR PROMPT ENGINEERING ASSISTANT</div>
+            <h1>Make every prompt <span>count.</span></h1>
+            <p>
+                Evaluate your AI prompts, discover missing components,
+                and learn how to write clearer instructions.
+            </p>
+        </section>
+
+        <section class="workspace" aria-label="Prompt checker workspace">
+
+            <!-- Left: Prompt input -->
+            <section class="panel input-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="step-label">STEP 01</span>
+                        <h2>Enter your prompt</h2>
+                    </div>
+                    <span class="heading-icon purple-icon">✎</span>
+                </div>
+
+                <p class="panel-description">
+                    Paste your AI prompt below to evaluate its quality.
+                </p>
+
+                <label for="promptInput" class="field-label">
+                    Your AI prompt
+                </label>
+
+                <textarea
+                    id="promptInput"
+                    placeholder="Example: Act as a science teacher. Explain photosynthesis to college students using simple language and real-world examples. Keep the explanation under 300 words and format it as bullet points."
+                    spellcheck="true"
+                    aria-describedby="inputHint errorMessage"
+                ></textarea>
+
+                <div class="input-meta">
+                    <span id="inputHint">Be clear, specific, and descriptive.</span>
+                    <span id="charCount">0 characters</span>
+                </div>
+
+                <p id="errorMessage" class="error-message" role="alert" hidden>
+                    Please enter a prompt before checking.
+                </p>
+
+                <div class="button-group">
+                    <button id="checkBtn" class="btn btn-primary" type="button">
+                        <span>✦</span> Check Prompt
+                    </button>
+                    <button id="sampleBtn" class="btn btn-secondary" type="button">
+                        Load Sample
+                    </button>
+                    <button id="clearBtn" class="btn btn-ghost" type="button">
+                        Clear
+                    </button>
+                </div>
+
+                <div class="tip-card">
+                    <span class="tip-icon">💡</span>
+                    <div>
+                        <strong>Prompt engineering tip</strong>
+                        <p>
+                            Tell the AI who to be, what to do, why it matters,
+                            which rules to follow, and how to respond.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right: Analysis results -->
+            <section class="panel results-panel" aria-label="Analysis results">
+                <div class="panel-heading">
+                    <div>
+                        <span class="step-label">STEP 02</span>
+                        <h2>Prompt analysis</h2>
+                    </div>
+                    <span class="heading-icon green-icon">✓</span>
+                </div>
+
+                <p class="panel-description">
+                    Your results will appear here after checking your prompt.
+                </p>
+
+                <div class="score-card" aria-live="polite">
+                    <div class="score-top">
+                        <div>
+                            <span class="score-caption">YOUR PROMPT SCORE</span>
+                            <div class="score-number">
+                                <span id="scoreValue">--</span>
+                                <span class="score-total">/ 100</span>
+                            </div>
+                        </div>
+                        <div id="ratingBadge" class="rating-badge">
+                            Not checked
+                        </div>
+                    </div>
+
+                    <div
+                        id="progressTrack"
+                        class="progress-track"
+                        role="progressbar"
+                        aria-label="Prompt quality score"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                    >
+                        <div id="progressBar" class="progress-bar"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>Needs improvement</span>
+                        <span>Excellent</span>
+                    </div>
+                </div>
+
+                <div class="component-heading">
+                    <h3>Essential components</h3>
+                    <span id="componentCount" class="count-badge">0 / 5</span>
+                </div>
+
+                <div id="componentList" class="component-list" aria-live="polite">
+                    <div class="empty-state">
+                        <span class="empty-icon">⌕</span>
+                        <strong>Ready to analyze</strong>
+                        <p>
+                            Enter your prompt and select Check Prompt
+                            to see which components are present.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="results-footer">
+                    <span>🎓</span>
+                    <p>Every check is an opportunity to learn.</p>
+                </div>
+            </section>
+
+        </section>
+
+        <footer class="site-footer">
+            <p>Built for learners • Simple rules, smarter prompts</p>
+            <p>Works offline · No API required</p>
+        </footer>
+    </main>
+
+</body>
+</html>
